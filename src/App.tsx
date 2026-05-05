@@ -148,7 +148,7 @@ export default function App() {
             </motion.div>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#5A544E] mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#5A544E] mb-4 tracking-tight font-display">
             我是 <span className="text-[#D97D54]">{profileData.name}</span>
           </h1>
 
@@ -293,14 +293,14 @@ export default function App() {
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-10">
               <div className="w-12 h-1 bg-[#D97D54] rounded-full"></div>
-              <h2 className="text-3xl font-bold text-[#5A544E] tracking-tight">我的生命故事</h2>
+              <h2 className="text-3xl font-bold text-[#5A544E] tracking-tight font-display">我的生命故事</h2>
             </div>
 
             <div className="space-y-12">
               {/* Part 1 */}
               <div className="relative pl-8 border-l-2 border-[#EBE3D5]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#8BA888] shadow-sm"></div>
-                <h3 className="text-xl font-bold text-[#5A544E] mb-4">🌱 自律與好奇心的萌芽</h3>
+                <h3 className="text-xl font-bold text-[#5A544E] mb-4 font-display">🌱 自律與好奇心的萌芽</h3>
                 <p className="text-[#827A71] leading-relaxed text-lg italic">
                   「我成長在一個平凡但充滿支持的家庭。父母雖然沒有給我優渥的物質條件，卻給了我最寶貴的財富：『對世界的好奇心』和對『目標的堅持』。在我的成長過程中，父母便鼓勵我嘗試各類課外活動，從繪畫、田徑到鋼琴中，我學會了基於興趣的自主學習，也明白任何成果都需要時間的沉澱。這種環境養成了我早起規劃行程、不輕易言棄的性格，以此自律成為我面對高壓環境時最堅實的後盾。」
                 </p>
@@ -309,7 +309,7 @@ export default function App() {
               {/* Part 2 */}
               <div className="relative pl-8 border-l-2 border-[#EBE3D5]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#D97D54] shadow-sm"></div>
-                <h3 className="text-xl font-bold text-[#5A544E] mb-4">🌉 從理論到實踐的跨越</h3>
+                <h3 className="text-xl font-bold text-[#5A544E] mb-4 font-display">🌉 從理論到實踐的跨越</h3>
                 <p className="text-[#827A71] leading-relaxed text-lg italic">
                   「進入學業成長的關鍵時期，是我思維轉變最鮮明的階段。我專注於前端開發與使用者體驗設計，在鑽研技術知識的同時，我意識到『空談無補』。為了驗證所學，我積極參與各種開源專案與競賽。 最令我印象深刻的是在一次大型開發實習中，我擔任前端開發領隊一職。我們遇到了技術架構挑戰與時程壓力，我主動站出來分析現狀，運用邏輯分析與團隊協調重新分配任務。」
                 </p>
@@ -318,16 +318,16 @@ export default function App() {
               {/* Part 3 */}
               <div className="relative pl-8 border-l-2 border-[#EBE3D5]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#8BA888] shadow-sm"></div>
-                <h3 className="text-xl font-bold text-[#5A544E] mb-4">🌋 挫折是成長的回饋</h3>
+                <h3 className="text-xl font-bold text-[#5A544E] mb-4 font-display">🌋 挫折是成長的回饋</h3>
                 <p className="text-[#827A71] leading-relaxed text-lg italic">
-                  「這次經驗我深刻地體會到：真正的成長並不讓迴避問題，而著眼於如何在高壓下保持理智並解決問題。 人生描述並不總是坦途，在（一個具體的掙扎，如：考場失利、求職碰壁、專案失敗）時，我曾經一度懷疑自己的能力。然而，我卻無意間沉溺於低潮，而是選擇『覆盤』。我分析出失敗的主要原因是（原因），並制定了（重新規劃）。我學會將罷工視為一種『市場回饋』，調整腳步後重新出發。這也讓我後來在工作或學習中，具備了更強的抗壓性與素質心理，能夠以更寬廣的格局看待眼前的得失。」
+                  「這段經驗讓我深刻地體會到：真正的成長並不在於迴避問題，而著眼於如何在高壓下保持理智並解決問題。人生道路並不總是坦途，在某些具體的挑戰中，如考場失利或專案遇到瓶頸時，我也曾懷疑過自己。然而，我選擇『覆盤』與思考。我分析出失敗的原因，並制定了新的規劃。我學會將挫折視為一種『市場回饋』，調整腳步後重新出發。這也讓我後來在工作或學習中，具備了更強的抗壓性與心裡素質，能夠以更寬廣的格局看待眼前的得失。」
                 </p>
               </div>
 
               {/* Part 4 */}
               <div className="relative pl-8 border-l-2 border-[#EBE3D5]">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#5A544E] shadow-sm"></div>
-                <h3 className="text-xl font-bold text-[#5A544E] mb-4">🚀 創造與自我進化</h3>
+                <h3 className="text-xl font-bold text-[#5A544E] mb-4 font-display">🚀 創造與自我進化</h3>
                 <p className="text-[#827A71] leading-relaxed text-lg italic">
                   「回顧成長歷程，我發現自己始終在追求『更好的解決方案』。我不僅希望能夠完美達成被交辦的任務，更期許自己能夠成為一個『價值的創造者』。展望未來，我希望能在數位科技領域深耕，發揮我細心敏銳與執行力強的優勢。我確信，累積的種種經驗已化為我的養分，讓我能以謙卑但自信的姿態，迎接下一個階段的挑戰，為團隊與社會貢獻一己之力。」
                 </p>
