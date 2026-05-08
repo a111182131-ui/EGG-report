@@ -23,7 +23,7 @@ const contentItems = [
   { id: 'h1', category: 'about', title: '健康狀況', desc: '頭好壯壯，身心靈狀態極佳 💪！每週固定到健身房重訓三次，週末偶爾也會去河濱跑步，非常享受大汗淋漓的滿滿活力。', icon: <Heart className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
   { id: 'i1', category: 'interest', title: '光影捕捉手', desc: '業餘攝影愛好者 📸，假日總是帶著底片相機穿梭在城市巷弄，最喜歡紀錄人與人之間互動的純粹瞬間與夕陽下的金黃時刻。', icon: <Camera className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]' },
   { id: 'i2', category: 'interest', title: '假日手沖師', desc: '每天早晨最重要的儀式感 ☕。喜歡研究不同產地豆子的風味、嘗試各種沖煮參數，目標是能為朋友們沖出一杯讓他們驚豔的好咖啡！', icon: <Coffee className="w-8 h-8 text-[#5A544E]" />, color: 'bg-[#FDF9F0]' },
-  { id: 'i3', category: 'interest', title: '山林探險家', desc: '深愛大自然的寧靜與壯麗 ⛰️。目前正熱衷於收集台灣百岳，登山不僅是挑戰體能極限，更是與自己對話、沉澱心靈的最佳時刻。', icon: <Mountain className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]' },
+  { id: 'i3', category: 'interest', title: '山林探險家', desc: '深愛大自然的寧靜與壯麗 ⛰️。目前正熱衷於收集台灣百岳，登山不僅是挑戰體能極限，更是與自己對話、沉澱心靈的最佳時刻。', icon: <Mountain className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]', imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200' },
   { id: 'c1', category: 'career', title: '前端魔法師', desc: '目前擔任前端工程師 💻，專注於打造流暢且極具美感的使用者體驗。享受將設計師天馬行空的稿件轉化為現實的成就感，是個熱愛 Code 的怪胎。', icon: <Code className="w-8 h-8 text-[#5A544E]" />, color: 'bg-[#F0F7FD]' },
   { id: 'c2', category: 'career', title: '斜槓創作者', desc: '除了寫程式，也在社群媒體經營個人品牌 🚀。撰寫技術教學文章、分享職場生存法則，幫助新手少走彎路，期望發揮正面的影響力。', icon: <PenTool className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
   
@@ -228,14 +228,28 @@ export default function App() {
                 key={item.id}
                 className={`flex flex-col bg-white rounded-[32px] border border-[#EBE3D5] hover:border-[#8BA888] transition-colors overflow-hidden group shadow-sm`}
               >
-                {/* Video Check */}
+                {/* Video or Image Check */}
                 {'videoUrl' in item ? (
                   <div className="w-full aspect-video bg-black relative">
                     <video 
-                      src={item.videoUrl} 
+                      src={item.videoUrl as string} 
                       className="w-full h-full object-cover"
                       controls
                       playsInline
+                    />
+                    <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                       <div className={`w-10 h-10 ${item.color} rounded-xl flex items-center justify-center shadow-md`}>
+                        {item.icon}
+                       </div>
+                    </div>
+                  </div>
+                ) : 'imageUrl' in item ? (
+                  <div className="w-full aspect-video relative overflow-hidden">
+                    <img 
+                      src={item.imageUrl as string} 
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
                     />
                     <div className="absolute top-4 left-4 z-10 pointer-events-none">
                        <div className={`w-10 h-10 ${item.color} rounded-xl flex items-center justify-center shadow-md`}>
