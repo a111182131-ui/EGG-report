@@ -10,11 +10,18 @@ import {
   MapPin, Link as LinkIcon, Github, Play, Video
 } from 'lucide-react';
 
+// Import assets from src/ai-images
+import profilePhoto from './ai-images/IMG_1371.JPG';
+import vlog1 from './ai-images/vlog1.mp4';
+import vlog2 from './ai-images/vlog2.mp4';
+import vlog3 from './ai-images/vlog3.mp4';
+import vlog4 from './ai-images/vlog4.mp4';
+
 const profileData = {
   name: "宇恩 (Ethan)",
   age: 26,
   gender: "男生",
-  photo: "/IMG_1371.JPG",
+  photo: profilePhoto,
   shortIntro: "熱愛生活與挑戰，隨時準備迎接下一場冒險！🌍"
 };
 
@@ -24,6 +31,7 @@ const contentItems = [
   { id: 'i1', category: 'interest', title: '光影捕捉手', desc: '業餘攝影愛好者 📸，假日總是帶著底片相機穿梭在城市巷弄，最喜歡紀錄人與人之間互動的純粹瞬間與夕陽下的金黃時刻。', icon: <Camera className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]' },
   { id: 'i2', category: 'interest', title: '假日手沖師', desc: '每天早晨最重要的儀式感 ☕。喜歡研究不同產地豆子的風味、嘗試各種沖煮參數，目標是能為朋友們沖出一杯讓他們驚豔的好咖啡！', icon: <Coffee className="w-8 h-8 text-[#5A544E]" />, color: 'bg-[#FDF9F0]' },
   { id: 'i3', category: 'interest', title: '山林探險家', desc: '深愛大自然的寧靜與壯麗 ⛰️。目前正熱衷於收集台灣百岳，登山不僅是挑戰體能極限，更是與自己對話、沉澱心靈的最佳時刻。', icon: <Mountain className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]', imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200' },
+  { id: 'i4', category: 'interest', title: 'AI 數位藝術', desc: '探索人工智慧與藝術結合的無限可能 🎨。利用最新技術創作出夢幻的奇幻場景與超現實景觀。', icon: <Code className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]', imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200' },
   { id: 'c1', category: 'career', title: '前端魔法師', desc: '目前擔任前端工程師 💻，專注於打造流暢且極具美感的使用者體驗。享受將設計師天馬行空的稿件轉化為現實的成就感，是個熱愛 Code 的怪胎。', icon: <Code className="w-8 h-8 text-[#5A544E]" />, color: 'bg-[#F0F7FD]' },
   { id: 'c2', category: 'career', title: '斜槓創作者', desc: '除了寫程式，也在社群媒體經營個人品牌 🚀。撰寫技術教學文章、分享職場生存法則，幫助新手少走彎路，期望發揮正面的影響力。', icon: <PenTool className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
   
@@ -33,7 +41,7 @@ const contentItems = [
     category: 'vlog', 
     title: '台南出發：高鐵旅程', 
     desc: '搭乘高鐵前往台南站，感受充滿期待的旅程起點。', 
-    videoUrl: '/vlog1.mp4',
+    videoUrl: vlog1,
     icon: <Video className="w-8 h-8 text-[#8BA888]" />, 
     color: 'bg-[#F0FDF4]' 
   },
@@ -42,7 +50,7 @@ const contentItems = [
     category: 'vlog', 
     title: '果貿社區：寬來順早餐', 
     desc: '在圓環建築中品嚐道地早餐，感受高雄眷村的日常魅力。', 
-    videoUrl: '/vlog2.mp4',
+    videoUrl: vlog2,
     icon: <Video className="w-8 h-8 text-[#D97D54]" />, 
     color: 'bg-[#FDF2F0]' 
   },
@@ -51,7 +59,7 @@ const contentItems = [
     category: 'vlog', 
     title: '排隊名店：興隆居早餐', 
     desc: '必吃的噴汁湯包與經典燒餅，早晨的排隊也變得值得。', 
-    videoUrl: '/vlog3.mp4',
+    videoUrl: vlog3,
     icon: <Video className="w-8 h-8 text-[#5A544E]" />, 
     color: 'bg-[#FDF9F0]' 
   },
@@ -60,7 +68,7 @@ const contentItems = [
     category: 'vlog', 
     title: '藝術洗禮：奇美博物館', 
     desc: '參觀豐富的常設展，在國際級的展覽空間中流連忘返。', 
-    videoUrl: '/vlog4.mp4',
+    videoUrl: vlog4,
     icon: <Video className="w-8 h-8 text-[#D97D54]" />, 
     color: 'bg-[#FDF2F0]' 
   },
