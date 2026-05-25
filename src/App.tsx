@@ -12,6 +12,7 @@ import {
 
 // Import assets from src/ai-images
 import profilePhoto from './ai-images/IMG_1371.JPG';
+import newAvatar from './IMG_2932.PNG';
 import vlog1 from './ai-images/vlog1.mp4';
 import vlog2 from './ai-images/vlog2.mp4';
 import vlog3 from './ai-images/vlog3.mp4';
@@ -21,7 +22,7 @@ const profileData = {
   name: "宇恩 (Ethan)",
   age: 26,
   gender: "男生",
-  photo: profilePhoto,
+  photo: newAvatar,
   shortIntro: "熱愛生活與挑戰，隨時準備迎接下一場冒險！🌍"
 };
 
@@ -31,7 +32,7 @@ const contentItems = [
   { id: 'i1', category: 'interest', title: '光影捕捉手', desc: '業餘攝影愛好者 📸，假日總是帶著底片相機穿梭在城市巷弄，最喜歡紀錄人與人之間互動的純粹瞬間與夕陽下的金黃時刻。', icon: <Camera className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]' },
   { id: 'i2', category: 'interest', title: '假日手沖師', desc: '每天早晨最重要的儀式感 ☕。喜歡研究不同產地豆子的風味、嘗試各種沖煮參數，目標是能為朋友們沖出一杯讓他們驚豔的好咖啡！', icon: <Coffee className="w-8 h-8 text-[#5A544E]" />, color: 'bg-[#FDF9F0]' },
   { id: 'i3', category: 'interest', title: '山林探險家', desc: '深愛大自然的寧靜與壯麗 ⛰️。目前正熱衷於收集台灣百岳，登山不僅是挑戰體能極限，更是與自己對話、沉澱心靈的最佳時刻。', icon: <Mountain className="w-8 h-8 text-[#8BA888]" />, color: 'bg-[#F0FDF4]', imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200' },
-  { id: 'i4', category: 'interest', title: 'AI 數位藝術', desc: '探索人工智慧與藝術結合的無限可能 🎨。利用最新技術創作出夢幻的奇幻場景與超現實景觀。', icon: <Code className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]', imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200' },
+  { id: 'i4', category: 'interest', title: 'AI 數位藝術 & 3D 建模', desc: '探索人工智慧與藝術結合的無限可能 🎨。利用最新技術創作夢幻的奇幻場景與 3D 立體模型。點擊查看利用 Tripo3D 工具生成的精彩 3D AI 建模作品！', icon: <Code className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]', imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200', linkUrl: 'https://studio.tripo3d.ai/3d-model/3f5b1edc-e564-4273-89a2-b31b15dec82d?invite_code=Q2PFTY' },
   { id: 'c1', category: 'career', title: '前端魔法師', desc: '目前擔任前端工程師 💻，專注於打造流暢且極具美感的使用者體驗。享受將設計師天馬行空的稿件轉化為現實的成就感，是個熱愛 Code 的怪胎。', icon: <Code className="w-8 h-8 text-[#5A544E]" />, color: 'bg-[#F0F7FD]' },
   { id: 'c2', category: 'career', title: '斜槓創作者', desc: '除了寫程式，也在社群媒體經營個人品牌 🚀。撰寫技術教學文章、分享職場生存法則，幫助新手少走彎路，期望發揮正面的影響力。', icon: <PenTool className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
   
@@ -283,6 +284,18 @@ export default function App() {
                       <Play className="w-4 h-4" /> 影音遊記
                     </div>
                   )}
+                  {'linkUrl' in item && (
+                    <div className="mt-auto pt-4 border-t border-[#F2EDE4] flex items-center justify-between">
+                      <a 
+                        href={item.linkUrl as string} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center gap-2 text-[#D97D54] hover:text-[#c46942] font-bold text-xs uppercase tracking-widest transition-colors group-hover:underline"
+                      >
+                        <LinkIcon className="w-4 h-4" /> 觀看 AI 3D 創意模型 ➔
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -385,6 +398,10 @@ export default function App() {
               <a href="#" className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 rounded-xl transition-colors font-medium text-sm">
                 <Instagram className="w-5 h-5" />
                 @ethan_daily
+              </a>
+              <a href="https://studio.tripo3d.ai/3d-model/3f5b1edc-e564-4273-89a2-b31b15dec82d?invite_code=Q2PFTY" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-[#D97D54] hover:opacity-90 border border-[#D97D54]/20 px-6 py-3 rounded-xl transition-colors font-medium text-sm text-white">
+                <LinkIcon className="w-5 h-5" />
+                Tripo3D 創新模型
               </a>
               <a href="#" className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 rounded-xl transition-colors font-medium text-sm">
                 <Github className="w-5 h-5" />
