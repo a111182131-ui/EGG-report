@@ -26,6 +26,30 @@ const profileData = {
   shortIntro: "熱愛生活與挑戰，隨時準備迎接下一場冒險！🌍"
 };
 
+const getYouTubeEmbedUrl = (url: string) => {
+  if (!url) return '';
+  if (url.includes('youtube.com/embed/')) return url;
+  
+  // Handle youtu.be/xxx
+  const youtuBeMatch = url.match(/youtu\.be\/([^?#]+)/);
+  if (youtuBeMatch) {
+    return `https://www.youtube.com/embed/${youtuBeMatch[1]}`;
+  }
+  
+  // Handle youtube.com/watch?v=xxx
+  const watchMatch = url.match(/v=([^&#]+)/);
+  if (watchMatch) {
+    return `https://www.youtube.com/embed/${watchMatch[1]}`;
+  }
+  
+  return url;
+};
+
+const isYouTubeUrl = (url: string) => {
+  if (!url) return false;
+  return url.includes('youtube.com') || url.includes('youtu.be');
+};
+
 const contentItems = [
   { id: 'p1', category: 'about', title: '我的個性', desc: '十足的陽光男孩 ☀️！充滿好奇心、幽默風趣，在群體中常常是帶動氣氛的角色，非常喜歡結交新朋友，聽聽別人的故事。', icon: <Smile className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
   { id: 'h1', category: 'about', title: '健康狀況', desc: '頭好壯壯，身心靈狀態極佳 💪！每週固定到健身房重訓三次，週末偶爾也會去河濱跑步，非常享受大汗淋漓的滿滿活力。', icon: <Heart className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
@@ -37,6 +61,15 @@ const contentItems = [
   { id: 'c2', category: 'career', title: '斜槓創作者', desc: '除了寫程式，也在社群媒體經營個人品牌 🚀。撰寫技術教學文章、分享職場生存法則，幫助新手少走彎路，期望發揮正面的影響力。', icon: <PenTool className="w-8 h-8 text-[#D97D54]" />, color: 'bg-[#FDF2F0]' },
   
   // Video Items
+  { 
+    id: 'v5', 
+    category: 'vlog', 
+    title: '探險實錄：高山極境影片', 
+    desc: '直接在網頁中檢視這部精彩影片！跟著山林探險家的步伐，穿越雲霧，俯瞰群山，感受大自然的雄偉與壯麗。', 
+    videoUrl: 'https://youtu.be/HedFjGxPmkI',
+    icon: <Play className="w-8 h-8 text-[#8BA888]" />, 
+    color: 'bg-[#F0FDF4]' 
+  },
   { 
     id: 'v1', 
     category: 'vlog', 
@@ -240,12 +273,22 @@ export default function App() {
                 {/* Video or Image Check */}
                 {'videoUrl' in item ? (
                   <div className="w-full aspect-video bg-black relative">
-                    <video 
-                      src={item.videoUrl as string} 
-                      className="w-full h-full object-cover"
-                      controls
-                      playsInline
-                    />
+                    {isYouTubeUrl(item.videoUrl as string) ? (
+                      <iframe
+                        src={getYouTubeEmbedUrl(item.videoUrl as string)}
+                        className="w-full h-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        title={item.title}
+                      />
+                    ) : (
+                      <video 
+                        src={item.videoUrl as string} 
+                        className="w-full h-full object-cover"
+                        controls
+                        playsInline
+                      />
+                    )}
                     <div className="absolute top-4 left-4 z-10 pointer-events-none">
                        <div className={`w-10 h-10 ${item.color} rounded-xl flex items-center justify-center shadow-md`}>
                         {item.icon}
